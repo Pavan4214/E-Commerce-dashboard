@@ -97,7 +97,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //server static files
 //app.use(express.static("public"));
-app.use(compression());
+//app.use(compression());
 app.get("/", (req, res) => {
   res.sendFile(path.join("public", "index.html"));
 });
