@@ -10,7 +10,7 @@ dotenv.config();
 // Create a new order
 exports.createOrderCtrl = asyncHandler(async (req, res) => {
   const { orderItems, shippingAddress, totalPrice } = req.body;
-  console.log(req.body);
+  //console.log(req.body);
 
   const user = await User.findById(req.userAuthId);
 

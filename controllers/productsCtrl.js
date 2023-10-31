@@ -5,7 +5,7 @@ const Product = require("../model/Product.js");
 
 // Create new product
 exports.createProductCtrl = asyncHandler(async (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   const { name, description, category, sizes, colors, price, totalQty, brand } =
     req.body;
   const convertedImgs = req.files.map((file) => file?.path);
@@ -64,7 +64,7 @@ exports.createProductCtrl = asyncHandler(async (req, res) => {
 
 // Get all products
 exports.getProductsCtrl = asyncHandler(async (req, res) => {
-  console.log(req.query);
+  //console.log(req.query);
   //query
   let productQuery = Product.find();
 

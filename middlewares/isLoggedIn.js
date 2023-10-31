@@ -13,7 +13,7 @@ const isLoggedIn = (req, res, next) => {
     req.userAuthId = decodedUser?.id;
     next();
   }
-  console.log("user is loggedin");
+  //console.log("user is loggedin");
 };
 
 module.exports = isLoggedIn;

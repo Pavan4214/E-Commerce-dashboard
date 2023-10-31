@@ -8,6 +8,7 @@ const brandsRouter = require("./routes/brandsRouter.js");
 const categoriesRouter = require("./routes/categoriesRouter.js");
 const colorRouter = require("./routes/colorRouter.js");
 const orderRouter = require("./routes/ordersRouter.js");
+const compression = require("compression");
 const productsRouter = require("./routes/productsRoute.js");
 const reviewRouter = require("./routes/reviewRouter.js");
 const userRoutes = require("./routes/usersRoute.js");
@@ -96,7 +97,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //server static files
 //app.use(express.static("public"));
-
+app.use(compression());
 app.get("/", (req, res) => {
   res.sendFile(path.join("public", "index.html"));
 });

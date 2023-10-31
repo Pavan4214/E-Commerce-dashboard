@@ -5,7 +5,7 @@ const isAdmin = async (req, res, next) => {
   const user = await User.findById(req.userAuthId);
   //check if admin
   if (user?.isAdmin) {
-    console.log("user is Admdin");
+    //console.log("user is Admdin");
     next();
   } else {
     next(new Error("Access denied, admin only"));
