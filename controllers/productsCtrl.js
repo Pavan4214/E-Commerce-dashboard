@@ -16,7 +16,7 @@ exports.createProductCtrl = asyncHandler(async (req, res) => {
   }
   //find the brand
   const brandFound = await Brand.findOne({
-    name: "addidas",
+    name: brand,
   });
 
   if (!brandFound) {
@@ -64,7 +64,7 @@ exports.createProductCtrl = asyncHandler(async (req, res) => {
 
 // Get all products
 exports.getProductsCtrl = asyncHandler(async (req, res) => {
-  //console.log(req.query);
+  console.log(req.query);
   //query
   let productQuery = Product.find();
 

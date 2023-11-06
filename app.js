@@ -28,7 +28,7 @@ mongoose
 
 const app = express();
 //cors
-app.use(cors());
+//app.use(cors());
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 //const endpointSecret =
