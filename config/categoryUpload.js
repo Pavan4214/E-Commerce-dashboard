@@ -13,11 +13,7 @@ cloudinary.config({
 // Create storage engine for Multer
 const storage = new CloudinaryStorage({
   cloudinary,
-<<<<<<< HEAD
   allowedFormats: ["jpg", "png", "jpeg"],
-=======
-  allowedFormats: ["jpg", "png","jpeg"],
->>>>>>> 47a2b2b14551b7c949316512774212d3b9bed3d3
   params: {
     folder: "blog-api",
   },
