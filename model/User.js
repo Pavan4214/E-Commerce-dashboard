@@ -21,6 +21,11 @@ const UserShema = new Schema(
         ref: "Order",
       },
     ],
+    cart:[
+      {
+        type: String,
+      },
+    ]
     wishLists: [
       {
         type: mongoose.Schema.Types.ObjectId,
