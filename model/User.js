@@ -23,7 +23,8 @@ const UserShema = new Schema(
     ],
     cart:[
       {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Product",
       },
     ]
     wishLists: [
