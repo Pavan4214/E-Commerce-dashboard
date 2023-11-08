@@ -7,6 +7,7 @@ const { verifyToken } = require("../utils/verifyToken.js");
 
 // Register user
 exports.registerUserCtrl = asyncHandler(async (req, res) => {
+  console.log(req);
   const { fullname, email, password } = req.body;
   // Check user exists
   const userExists = await User.findOne({ email });
@@ -32,6 +33,7 @@ exports.registerUserCtrl = asyncHandler(async (req, res) => {
 
 // Login user
 exports.loginUserCtrl = asyncHandler(async (req, res) => {
+  console.log(req);
   const { email, password } = req.body;
   // Find the user in db by email only
   const userFound = await User.findOne({
