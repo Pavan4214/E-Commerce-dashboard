@@ -113,32 +113,32 @@ exports.getProductsCtrl = asyncHandler(async (req, res) => {
   }
   //pagination
   //page
-  const page = parseInt(req.query.page) ? parseInt(req.query.page) : 1;
+  //const page = parseInt(req.query.page) ? parseInt(req.query.page) : 1;
   //limit
-  const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) : 10;
+  //const limit = parseInt(req.query.limit) ? parseInt(req.query.limit) : 10;
   //startIdx
-  const startIndex = (page - 1) * limit;
+  //const startIndex = (page - 1) * limit;
   //endIdx
-  const endIndex = page * limit;
+  //const endIndex = page * limit;
   //total
   const total = await Product.countDocuments();
 
-  productQuery = productQuery.skip(startIndex).limit(limit);
+  //productQuery = productQuery.skip(startIndex).limit(limit);
 
   //pagination results
-  const pagination = {};
-  if (endIndex < total) {
-    pagination.next = {
-      page: page + 1,
-      limit,
-    };
-  }
-  if (startIndex > 0) {
-    pagination.prev = {
-      page: page - 1,
-      limit,
-    };
-  }
+  // const pagination = {};
+  // if (endIndex < total) {
+  //   pagination.next = {
+  //     page: page + 1,
+  //     limit,
+  //   };
+  // }
+  // if (startIndex > 0) {
+  //   pagination.prev = {
+  //     page: page - 1,
+  //     limit,
+  //   };
+  // }
 
   //await the query
   const products = await productQuery.populate("reviews");
@@ -146,7 +146,6 @@ exports.getProductsCtrl = asyncHandler(async (req, res) => {
     status: "success",
     total,
     results: products.length,
-    pagination,
     message: "Products fetched successfully",
     products,
   });

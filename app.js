@@ -111,7 +111,6 @@ app.use("/api/v1/colors/", colorRouter);
 app.use("/api/v1/reviews/", reviewRouter);
 app.use("/api/v1/orders/", orderRouter);
 app.use("/api/v1/coupons/", couponsRouter);
-
 //handles all invalid routes requests
 app.use("/*", (req, res, next) => {
   const err = new Error(`Route: ${req.originalUrl} not found`);
