@@ -84,10 +84,12 @@ exports.getProductsCtrl = asyncHandler(async (req, res) => {
 
   //filter by category
   if (req.query.category) {
-    productQuery = productQuery.find({
-      category: { $regex: req.query.category, $options: "i" },
-    });
-  }
+  // Use exact match without regex for "men"
+  productQuery = productQuery.find({
+    category: req.query.category,
+  });
+}
+
 
   //filter by color
   if (req.query.color) {
