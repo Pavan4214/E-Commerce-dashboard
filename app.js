@@ -28,7 +28,7 @@ mongoose
 
 const app = express();
 //cors
-//app.use(cors());
+app.use(cors());
 
 // This is your Stripe CLI webhook secret for testing your endpoint locally.
 //const endpointSecret =
@@ -95,9 +95,19 @@ app.use(express.json());
 //url encoded
 app.use(express.urlencoded({ extended: true }));
 
+// app.use((req, res, next) => {
+//   res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+//   // You can use a wildcard '*' to allow any origin (not recommended for production)
+//   // res.setHeader('Access-Control-Allow-Origin', '*');
+//   // Add other necessary CORS headers as well
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   next();
+// });
+
 //server static files
-//app.use(express.static("public"));
-//app.use(compression());
+app.use(express.static("public"));
+app.use(compression());
 app.get("/", (req, res) => {
   res.sendFile(path.join("public", "index.html"));
 });
